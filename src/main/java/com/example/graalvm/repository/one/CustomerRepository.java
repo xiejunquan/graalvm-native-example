@@ -1,4 +1,4 @@
-package com.example.graalvm.repository;
+package com.example.graalvm.repository.one;
 
 import com.example.graalvm.entity.Customer;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;

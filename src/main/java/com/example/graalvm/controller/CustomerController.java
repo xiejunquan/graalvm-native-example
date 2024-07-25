@@ -1,12 +1,9 @@
 package com.example.graalvm.controller;
 
 import com.example.graalvm.entity.Customer;
-import com.example.graalvm.entity.Order;
-import com.example.graalvm.repository.CustomerRepository;
-import com.example.graalvm.repository.OrderRepository;
+import com.example.graalvm.repository.one.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;

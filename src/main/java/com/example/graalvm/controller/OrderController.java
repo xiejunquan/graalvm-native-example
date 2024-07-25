@@ -1,7 +1,7 @@
 package com.example.graalvm.controller;
 
 import com.example.graalvm.entity.Order;
-import com.example.graalvm.repository.OrderRepository;
+import com.example.graalvm.repository.one.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;

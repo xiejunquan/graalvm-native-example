@@ -2,6 +2,7 @@ package com.example.graalvm.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.ReactiveStringRedisTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,9 @@ public class RedisController {
 
     private final ReactiveStringRedisTemplate redisTemplate;
 
+    @Qualifier("twoReactiveRedisTemplate")
+    private final ReactiveStringRedisTemplate twoRedisTemplate;
+
     @RequestMapping("/set")
     public Mono<Boolean> set(String key, String value) {
         return redisTemplate.opsForValue().set(key, value, Duration.ofSeconds(60));
@@ -29,6 +33,6 @@ public class RedisController {
 
     @RequestMapping("/get")
     public Mono<String> get(String key) {
-        return redisTemplate.opsForValue().get(key);
+        return twoRedisTemplate.opsForValue().get(key);
     }
 }
